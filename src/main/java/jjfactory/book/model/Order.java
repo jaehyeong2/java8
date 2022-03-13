@@ -15,7 +15,7 @@ public class Order {
     @GeneratedValue
     private Long id;
 
-    private LocalDateTime orderDate;
+    private LocalDateTime orderDate = LocalDateTime.now();
 
     @ManyToOne
     private Member member;

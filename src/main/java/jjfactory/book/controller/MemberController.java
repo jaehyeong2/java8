@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @RequiredArgsConstructor
 @Controller
-public class SelectController {
+public class MemberController {
 
     private final MemberService memberService;
 
