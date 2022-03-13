@@ -17,7 +17,7 @@ public class ItemService {
     private final ItemRepository itemRepository;
 
     @Transactional(readOnly = true)
-    public List<Item> getMemberList() {
+    public List<Item> getList() {
         List<Item> all = itemRepository.findAll();
         return all;
     }

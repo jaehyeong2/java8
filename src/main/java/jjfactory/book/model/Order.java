@@ -15,11 +15,31 @@ public class Order {
     @GeneratedValue
     private Long id;
 
-    private LocalDateTime orderDate = LocalDateTime.now();
+    private LocalDateTime orderDate;
 
     @ManyToOne
     private Member member;
 
+    @OneToOne
+    private Delivery delivery;
+
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
+    public static Order createOrder(Member member, Delivery delivery, OrderItem... orderItems) {
+        Order order = new Order();
+        order.setMember(member);
+        order.setDelivery(delivery);
+        for (OrderItem orderItem : orderItems) {
+            order.addOrderItem(orderItem);
+        }
+        order.setOrderStatus(OrderStatus.ORDER);
+        order.setOrderDate(LocalDateTime.now());
+        return order;
+    }
+
+    private void addOrderItem(OrderItem orderItem) {
+        orderItem.add(orderItem);
+        orderItem.setOrder(this);
+    }
 }

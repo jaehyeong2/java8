@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,8 +19,14 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping("/item")
-    public String ItemForm(){
+    public String itemForm(){
         return "itemForm";
+    }
+
+    @GetMapping("/item/list")
+    public String itemList(Model model){
+        model.addAttribute("items",itemService.getList());
+        return "itemList";
     }
 
     @PostMapping("/item")
