@@ -22,6 +22,11 @@ public class ItemService {
         return all;
     }
 
+//    @Transactional(readOnly = true)
+//    public Item getItem(){
+//        itemRepository.findItem()
+//    }
+
     @Transactional
     public void save(Item item){
         itemRepository.save(item);

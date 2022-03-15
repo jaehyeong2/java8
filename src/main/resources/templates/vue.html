@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h3>뷰 {{ username }}</h3>
+    <input v-model = "username">
+    <button v-on:click = "addItem">addItem</button>
+    <p>{{ arrays }}</p>
+    <ul>
+        <li v-for = "array in arrays">
+            {{ array }}
+        </li>
+    </ul>
+</div>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            username: "jaehyeong",
+            arrays: ['hu1','hu2','hi3']
+        },
+        methods: {
+            addItem(){
+                console.log("sdsd");
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -16,6 +16,11 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    @GetMapping("/vue")
+    public String goVue(){
+        return "vue";
+    }
+
     @GetMapping("/")
     public String home(){
         return "home";
