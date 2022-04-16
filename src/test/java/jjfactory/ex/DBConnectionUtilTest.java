@@ -1,6 +1,6 @@
 package jjfactory.ex;
 
-import jjfactory.connection.DBConnectionUtil;
+import jjfactory.jdbc.connection.DBConnectionUtil;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package jjfactory.connection;
+package jjfactory.jdbc.connection;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +11,7 @@ public class DBConnectionUtil {
 
     public static Connection getConnection(){
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/jav?serverTimezone=Asia/Seoul",
+            Connection connection = DriverManager.getConnection(ConnectionConst.URL,
                     "jae", "1234");
             log.info("get connection = {} , class = {}",connection,connection.getClass());
             return connection;
